@@ -16,4 +16,4 @@ python3 sift.py
 After the execution, the result will be saved under `output` folder.
 
 ## Sample Output
-![alt text](output/out.png)
+![alt text](output/out_sift.png)
