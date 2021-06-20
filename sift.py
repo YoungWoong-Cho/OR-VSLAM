@@ -48,7 +48,7 @@ class SIFT():
             self.img2 = cv2.imread(self.img2_path)
         elif self.mode == 'vid':
             self.img1, self.img2 = self.read_vid(self.vid_path, num_frames=2)
-        
+
         self.kp1, self.des1 = self.run_sift(self.img1)
         self.kp2, self.des2 = self.run_sift(self.img2)
 
@@ -61,27 +61,13 @@ class SIFT():
             self.img1, self.kp1, self.img2, self.kp2, self.matches[:100], None)  # , flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
         plt.imshow(img_match)
         plt.show()
-        
+
     def save_fit(self):
         if not os.path.exists('output'):
             os.mkdir('output')
         plt.savefig('output/out_sift.png')
 
-    # # img_path = os.path.join(os.getcwd(), 'asset')
-    # # img_list = read_img(img_path)
 
-    # img1_path, img2_path = read_vid('asset/IMG_3927.MOV', num_frames=2)
-
-    # # img1 = cv2.imread(img_list[0])
-    # # img2 = cv2.imread(img_list[1])
-
-    # img1_path = resize(img1_path)
-    # img2_path = resize(img2_path)
-
-    # kp1, des1 = run_sift(img1_path)
-    # kp2, des2 = run_sift(img2_path)
-
-    # match(img1_path, img2_path, kp1, kp2, des1, des2)
 if __name__ == '__main__':
     img1 = 'asset/img1.jpg'
     img2 = 'asset/img2.jpg'
