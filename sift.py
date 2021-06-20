@@ -23,7 +23,10 @@ def match(img1, img2, kp1, kp2, des1, des2):
     matches = sorted(matches, key=lambda x: x.distance)
     img_match = cv.drawMatches(
         img1, kp1, img2, kp2, matches[:50], None)#, flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
-    plt.imshow(img_match), plt.show()
+    plt.imshow(img_match)
+    if not os.path.exists('output'): os.mkdir('output')
+    plt.savefig('output/out.png')
+    plt.show()
 
 img_path = os.path.join(os.getcwd(), 'asset')
 img_list = read_files(img_path)
